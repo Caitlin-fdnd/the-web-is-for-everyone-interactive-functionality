@@ -1,0 +1,19 @@
+{% render 'partials/head.liquid'%}
+
+<section class="header">
+<h1>Snappmaps</h1>
+</section>
+
+<ul>
+
+{% for snapmap in snapmaps %}
+
+<li>
+<a href='/snappmap/{{ snapmap.name }}'>{{ snapmap.name }}</a>
+</li>
+
+{% endfor %}
+
+</ul>
+
+{% render 'partials/foot.liquid' %}

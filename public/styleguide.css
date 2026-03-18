@@ -1,0 +1,85 @@
+* {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Bariol-reg;
+    src: url(public/assets/bariol_regular-webfont.woff);
+}
+
+@font-face {
+    font-family: Bariol-thin;
+    src: url(public/assets/bariol_thin-webfont.woff);
+}
+
+@font-face {
+    font-family: Bariol-bold;
+    src: url(public/assets/bariol_bold-webfont.woff);
+}
+    
+
+body {
+
+    /* colors */
+    --dark-background: #172F3B;
+    --dark-grey-accent: #4E6977;
+    --light-background: #E9ECEE;
+    --light-accent: #00E53D; 
+    --dark-accent: #0F4;
+    --grey-accent: #90A1AA;
+    --error: #FF2A34;
+	--black: #000000;
+    --white: white;
+
+	/* font sizes */
+	--paragraph: clamp(1rem, 2vw, 1.3rem);
+	--heading-small: clamp(1.2rem, 2vw, 1rem);
+	--heading-medium: clamp(1.4rem, 2.7vw, 2.2rem);
+	--heading-big: clamp(1.4rem, 3vw, 2.5rem);
+
+    /* margings */
+    --reg-margin: 1rem;
+    --small-margin: .5rem;
+    --larger-margin: 3rem;
+    --large-margin: 6rem;
+
+    /* padding */
+    --small-padding: 1rem;
+    --reg-padding: 1.5rem;
+    --larger-padding: 2.5rem;
+    --large-padding: 4rem;
+
+    /* border-radius */
+    --border-round: 100%;
+    --border-small: 1rem;
+    --border-medium: 1.5rem;
+    --border-big: 2rem;
+}
+
+h1, h2 {
+	font-family: Bariol-bold;
+	font-size: var(--heading-big);
+}
+
+h3, h4 {
+	font-family: Bariol-bold;
+	font-size: var(--heading-medium);
+}
+
+h5, h6 {
+	font-family: Bariol-bold;
+	font-size: var(--heading-small);
+}
+
+p, a, span {
+    font-family: Bariol-reg;
+	font-size: var(--paragraph);
+}

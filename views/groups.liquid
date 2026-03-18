@@ -1,0 +1,16 @@
+{% render 'partials/head.liquid' %}
+
+<section class='header'>
+  <h1>Groups</h1>
+</section>
+
+<ul>
+  {% for group in groups %}
+    <li>
+      <!-- Link naar de individuele groepspagina -->
+      <a href="/group/{{ group.name }}">{{ group.name }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% render 'partials/foot.liquid' %}
