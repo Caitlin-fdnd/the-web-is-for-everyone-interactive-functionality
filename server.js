@@ -66,12 +66,6 @@ app.get('/snappmap/:name', async function (request, response) {
   });
 });
 
-app.get('/search', async function (request, response) {
-   // Render index.liquid uit de Views map
-   // Geef hier eventueel data aan mee
-   response.render('search.liquid')
-})
-
 // Maak een GET route voor de groepen (meestal doe je dit in de root, als /)
 app.get('/groups', async function (request, response) {
   try {
