@@ -10,6 +10,7 @@
     box-sizing: border-box;
 }
 
+/* @font-face is widely available*/
 @font-face {
     font-family: Bariol-reg;
     src: url(public/assets/bariol_regular-webfont.woff);
@@ -28,6 +29,7 @@
 
 body {
 
+    /* custom properties is widely available*/
     /* colors */
     --dark-background: #172F3B;
     --dark-grey-accent: #4E6977;

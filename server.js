@@ -57,51 +57,45 @@ app.get('/', async function (request, response) {
 app.get('/snappmap/:name', async function (request, response) {
   const name = request.params.name;
 
-  // Fetch van de specifieke snapmap via filter
-  const apiSnapMap = await fetch(`https://fdnd-agency.directus.app/items/snappthis_snapmap?filter[name][_eq]=${name}`);
+  const apiSnapMap = await fetch(
+    `https://fdnd-agency.directus.app/items/snappthis_snapmap?filter[name][_eq]=${name}&fields=*,snaps.*,snaps.picture.*`
+  );
+
   const apiSnapMapJSON = await apiSnapMap.json();
+  const snapmap = apiSnapMapJSON.data[0];
 
   response.render('snappmap.liquid', {
-    snapmaps: apiSnapMapJSON.data
+    snapmap: snapmap,
+    snaps: snapmap.snaps
   });
 });
 
-// Maak een GET route voor de groepen (meestal doe je dit in de root, als /)
+// GET route voor groepen
 app.get('/groups', async function (request, response) {
-  try {
-    const apiGroup = await fetch('https://fdnd-agency.directus.app/items/snappthis_group');
-    const apiGroupJSON = await apiGroup.json();
+  const apiGroup = await fetch('https://fdnd-agency.directus.app/items/snappthis_group');
+  const apiGroupJSON = await apiGroup.json();
 
-    // fallback naar lege array als er geen data is
-    const groups = apiGroupJSON.data || [];
+  const groups = apiGroupJSON.data || [];
 
-    response.render('groups.liquid', {
-      groups: groups
-    });
-
-  } catch (err) {
-    console.error(err);
-    response.status(500).send('Er is iets misgegaan bij het ophalen van groepen.');
-  }
+  response.render('groups.liquid', {
+    groups: groups
+  });
 });
 
+// GET route voor specifieke groep
 app.get('/group/:name', async function (request, response) {
-  try {
-    const groupname = request.params.name;
+  const groupname = request.params.name;
 
-    // Fetch van de specifieke groep via filter
-    const apiSnapGroup = await fetch(`https://fdnd-agency.directus.app/items/snappthis_group?filter[name][_eq]=${groupname}`);
-    const apiSnapGroupJSON = await apiSnapGroup.json();
+  const apiSnapGroup = await fetch(
+    `https://fdnd-agency.directus.app/items/snappthis_group?filter[name][_eq]=${encodeURIComponent(groupname)}`
+  );
+  const apiSnapGroupJSON = await apiSnapGroup.json();
 
-    response.render('squad.liquid', {
-      snapgroup: apiSnapGroupJSON.data || [] // fallback naar lege array
-    });
-
-  } catch (err) {
-    console.error(err);
-    response.status(500).send('Er is iets misgegaan bij het ophalen van de groep');
-  }
+  response.render('squad.liquid', {
+    snapgroup: apiSnapGroupJSON.data || []
+  });
 });
+
 
 // Maak een GET route voor het profiel (meestal doe je dit in de root, als /)
 app.get('/profile', async function (request, response) {

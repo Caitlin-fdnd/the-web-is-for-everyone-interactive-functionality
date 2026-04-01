@@ -1,2 +1,13 @@
 {% render 'partials/head.liquid' %}
+
+<ul class="photo-grid">
+  {% for snap in snaps %}
+    {% if snap.picture.id %}
+      <li>
+        <img src="https://fdnd-agency.directus.app/assets/{{ snap.picture.id }}">
+      </li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
 {% render 'partials/foot.liquid' %}
