@@ -1,2 +1,13 @@
 {% render 'partials/head.liquid'%}
+<header class="header">
+  <div class="header__top">
+  </div>
+
+  <div class="header__sub">
+    <span><img src="/assets/group.svg" alt="group"> {{ snapmap.group.name }}</span>
+  </div>
+</header>
+
+<img src="https://fdnd-agency.directus.app/assets/{{ snap.picture.id }}">
+
 {% render 'partials/foot.liquid'%}

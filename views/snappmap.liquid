@@ -2,12 +2,12 @@
 
 <header class="header">
   <div class="header__top">
- <h1>{{ snapmap.name }}</h1>
+    <h1>{{ snapmap.name }}</h1>
     <div class="header__icon">☰</div>
   </div>
 
   <div class="header__sub">
-    <span>👥 {{ snapmap.group.name }}</span>
+    <span><img src="/assets/group.svg" alt="group"> {{ snapmap.group.name }}</span>
   </div>
 </header>
 
@@ -16,7 +16,7 @@
     {% if snap.picture.id %}
       <li>
         <a href="/snapp/{{ snap.uuid }}">
-        <img src="https://fdnd-agency.directus.app/assets/{{ snap.picture.id }}">
+          <img src="https://fdnd-agency.directus.app/assets/{{ snap.picture.id }}">
         </a>
       </li>
     {% endif %}
