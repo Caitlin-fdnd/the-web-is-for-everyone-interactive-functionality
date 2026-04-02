@@ -1,6 +1,20 @@
 {% render 'partials/head.liquid'%}
 <header class="header">
   <div class="header__top">
+    <form action="/snapp/{{ snap.uuid }}/action" method="POST">
+  <input type="hidden" name="action" value="like">
+  <button type="submit"><img src="/assets/heart.svg" alt="group"></button>
+</form>
+
+<form action="/snapp/{{ snap.uuid }}/action" method="POST">
+  <input type="hidden" name="action" value="tomato">
+  <button type="submit"><img src="/assets/tomato.svg" alt="group"></button>
+</form>
+
+<form action="/snapp/{{ snap.uuid }}/action" method="POST">
+  <input type="hidden" name="action" value="star">
+  <button type="submit"><img src="/assets/star.svg" alt="group"></button>
+</form>
   </div>
 
   <div class="header__sub">
