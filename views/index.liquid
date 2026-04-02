@@ -1,15 +1,39 @@
 {% render 'partials/head.liquid'%}
 
-<section class="header">
-<h1>Snappmaps</h1>
-</section>
+<header class="header">
+  <div class="header__top">
+    <h1>Snappmaps</h1>
+    <div class="header__icon">☰</div>
+  </div>
+  </header>
 
-<ul>
+<ul class="snapmaps">
 
 {% for snapmap in snapmaps %}
 
-<li>
-<a href="/snappmap/{{ snapmap.name }}">{{ snapmap.name }}</a>
+<li class="snapmap">
+  <a href="/snappmap/{{ snapmap.name }}">
+
+    <h2>{{ snapmap.name }}</h2>
+
+    <div class="snapmap__row">
+
+      <div class="snapmap__count">
+        <span>📁</span>
+        <p>{{ snapmap.snaps.size }}</p>
+      </div>
+
+      <div class="snapmap__preview">
+        {% for snap in snapmap.snaps limit:5 %}
+          {% if snap.picture.id %}
+            <img src="https://fdnd-agency.directus.app/assets/{{ snap.picture.id }}">
+          {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </a>
 </li>
 
 {% endfor %}

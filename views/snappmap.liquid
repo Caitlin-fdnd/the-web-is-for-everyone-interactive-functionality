@@ -1,10 +1,23 @@
 {% render 'partials/head.liquid' %}
 
-<ul class="photo-grid">
+<header class="header">
+  <div class="header__top">
+ <h1>{{ snapmap.name }}</h1>
+    <div class="header__icon">☰</div>
+  </div>
+
+  <div class="header__sub">
+    <span>👥 {{ snapmap.group.name }}</span>
+  </div>
+</header>
+
+<ul class="grid">
   {% for snap in snaps %}
     {% if snap.picture.id %}
       <li>
+        <a href="/snapp/{{ snap.uuid }}">
         <img src="https://fdnd-agency.directus.app/assets/{{ snap.picture.id }}">
+        </a>
       </li>
     {% endif %}
   {% endfor %}
