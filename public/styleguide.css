@@ -13,17 +13,17 @@
 /* @font-face is widely available*/
 @font-face {
     font-family: Bariol-reg;
-    src: url(public/assets/bariol_regular-webfont.woff);
+    src: url('../assets/bariol_regular-webfont.woff') format('woff');
 }
 
 @font-face {
     font-family: Bariol-thin;
-    src: url(public/assets/bariol_thin-webfont.woff);
+    src: url('../assets/bariol_thin-webfont.woff') format('woff');
 }
 
 @font-face {
     font-family: Bariol-bold;
-    src: url(public/assets/bariol_bold-webfont.woff);
+    src: url('../assets/bariol_bold-webfont.woff') format('woff');
 }
     
 
