@@ -91,6 +91,31 @@ app.get('/snapp/:uuid', async function (request, response) {
   });
 });
 
+app.post('/snapp/:uuid/action', async (req, res) => {
+  const snapUuid = req.params.uuid;
+  const actionType = req.body.action; // like, tomato of star
+
+  try {
+    await fetch('https://fdnd-agency.directus.app/items/action', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + process.env.DIRECTUS_TOKEN
+      },
+      body: JSON.stringify({
+        snap: snapUuid,
+        action: actionType,
+        user: null // of user id als je login hebt
+      })
+    });
+
+    res.redirect(`/snapp/${snapUuid}`); // terug naar dezelfde pagina
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Server error');
+  }
+});
+
 // GET route voor groepen
 app.get('/groups', async function (request, response) {
   const apiGroup = await fetch('https://fdnd-agency.directus.app/items/snappthis_group');
