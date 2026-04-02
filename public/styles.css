@@ -82,8 +82,8 @@ body {
     }
 
     .snapmap__count {
-      width: 60px;
-      height: 60px;
+      width: 90px;
+      height: 90px;
       background: #ddd;
 
       display: flex;
@@ -101,10 +101,12 @@ body {
       display: flex;
       gap: 3px;
       flex: 1;
+      overflow-x: auto;
 
       img {
-        width: 60px;
-        height: 60px;
+        flex: 0 0 35%;
+        width: 90px;
+        aspect-ratio: 1/1;
         object-fit: cover;
       }
     }
