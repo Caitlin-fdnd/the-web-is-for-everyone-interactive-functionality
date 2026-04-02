@@ -48,11 +48,17 @@ app.set('views', './views')
 // Maak een GET route voor de index (meestal doe je dit in de root, als /)
 app.get('/', async function (request, response) {
 
+  const apiSnapMap = await fetch(
+    'https://fdnd-agency.directus.app/items/snappthis_snapmap?fields=*,snaps.*,snaps.picture.*'
+  );
+
+  const apiSnapMapJSON = await apiSnapMap.json();
+
   response.render('index.liquid', {
     snapmaps: apiSnapMapJSON.data
-  })
+  });
 
-})
+});
 
 app.get('/snappmap/:name', async function (request, response) {
   const name = request.params.name;
@@ -67,6 +73,21 @@ app.get('/snappmap/:name', async function (request, response) {
   response.render('snappmap.liquid', {
     snapmap: snapmap,
     snaps: snapmap.snaps
+  });
+});
+
+app.get('/snapp/:uuid', async function (request, response) {
+  const uuid = request.params.uuid;
+
+  const apiSnap = await fetch(
+    `https://fdnd-agency.directus.app/items/snappthis_snap?filter[uuid][_eq]=${encodeURIComponent(uuid)}&fields=*,picture.*`
+  );
+
+  const apiSnapJSON = await apiSnap.json();
+  const snap = apiSnapJSON.data[0];
+
+  response.render('snapp.liquid', {
+    snap: snap
   });
 });
 
