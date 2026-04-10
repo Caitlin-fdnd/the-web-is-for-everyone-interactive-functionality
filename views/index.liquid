@@ -1,9 +1,9 @@
 {% render 'partials/head.liquid'%}
 
 <header class="header">
-  <div class="header__top">
+  <section class="header-top">
     <h1>Snappmaps</h1>
-  </div>
+  </section>
   </header>
 
 <ul class="snapmaps">
@@ -15,14 +15,14 @@
 
     <h2>{{ snapmap.name }}</h2>
 
-    <div class="snapmap__row">
+    <div class="snapmap-row">
 
-      <div class="snapmap__count">
+      <div class="snapmap-count">
         <span><img src="assets/gallery.svg" alt="snappmap-gallery"></span>
         <p>{{ snapmap.snaps.size }}</p>
       </div>
 
-      <div class="snapmap__preview">
+      <div class="snapmap-row">
         {% for snap in snapmap.snaps limit:4 %}
           {% if snap.picture.id %}
             <img src="https://fdnd-agency.directus.app/assets/{{ snap.picture.id }}">

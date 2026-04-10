@@ -91,25 +91,22 @@ app.get('/snapp/:uuid', async function (request, response) {
   });
 });
 
+// POST route voor actions
 app.post('/snapp/:uuid/action', async (req, res) => {
   const snapUuid = req.params.uuid;
-  const actionType = req.body.action; // like, tomato of star
+  const actionType = req.body.action;
 
   try {
-    await fetch('https://fdnd-agency.directus.app/items/action', {
+    await fetch('https://fdnd-agency.directus.app/items/snappthis_action', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + process.env.DIRECTUS_TOKEN
-      },
       body: JSON.stringify({
         snap: snapUuid,
         action: actionType,
-        user: null // of user id als je login hebt
+        user: null
       })
     });
 
-    res.redirect(`/snapp/${snapUuid}`); // terug naar dezelfde pagina
+    res.redirect(`/snapp/${snapUuid}`);
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');
