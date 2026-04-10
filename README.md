@@ -1,9 +1,7 @@
 # Interactive Functionality
 
-Ontwerp en maak voor een opdrachtgever een interactieve toepassing die voor iedereen toegankelijk is
-
-De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web-is-for-everyone-interactive-functionality/blob/main/docs/INSTRUCTIONS.md)
-
+Snappthis
+https://the-web-is-for-everyone-interactive-87wj.onrender.com/
 
 ## Inhoudsopgave
 
@@ -15,18 +13,26 @@ De instructie vind je in: [INSTRUCTIONS.md](https://github.com/fdnd-task/the-web
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual of video toe 📸 -->
-<!-- Voeg een link toe naar GitHub Pages 🌐-->
+In dit project maak ik een mobiele applicatie voor de opdrachtgever Snappthis.
+
+<img width="195" height="346" alt="Screenshot 2026-04-10 150356" src="https://github.com/user-attachments/assets/2ba8b3e9-7375-4378-8df0-f86634d74922" />
+
 
 ## Gebruik
-<!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+Deze app wordt gemaakt om te gebruiken in een klassikale omgeving, je maakt een account aan, je wordt uitgenodigd om deel te nemen aan groepen, en in die groepen heb je verschillende onderwerpen waar de gebruiker voor een bepaalde tijd een foto aan kan toevoegen om daar later in de klas een gesprek over te hebben, deze onderwerpen heten "snappmaps" en de foto's die je uploadt zijn "snaps"
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framework of library gebruikt? -->
+- Dit werk is gemaakt met variabele data uit een database. Voorbeeld:
+https://github.com/Caitlin-fdnd/the-web-is-for-everyone-interactive-functionality/blob/902c2f0c8ed50b65a9c7c332420f956fa5f4486e/views/index.liquid#L25-L31
+
+- Ik maak gebruik van een styleguide. Voorbeeld:
+https://github.com/Caitlin-fdnd/the-web-is-for-everyone-interactive-functionality/blob/902c2f0c8ed50b65a9c7c332420f956fa5f4486e/views/partials/head.liquid#L7
+
+- Ik maak gebruik van kebab cases in mijn classnamen. Voorbeeld:
+https://github.com/Caitlin-fdnd/the-web-is-for-everyone-interactive-functionality/blob/902c2f0c8ed50b65a9c7c332420f956fa5f4486e/views/snappmap.liquid#L4
 
 ## Installatie
-<!-- Bij Installatie staat hoe een andere developer aan jouw repo kan werken -->
+Om dit werk te downloaded, clone je eerst de repo, dan open je de code in je code editor. Daarna ga je daar naar je terminal via de shortcut ( ctrl + ` ) en daar type je in "Npm install" om de juiste pakketten te installeren, dan kun je aan de slag!
 
 
 ## Bronnen
