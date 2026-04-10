@@ -34,9 +34,8 @@ body {
     --dark-background: #172F3B;
     --dark-grey-accent: #4E6977;
     --light-background: #E9ECEE;
-    --light-accent: #00E53D; 
-    --dark-accent: #0F4;
-    --grey-accent: #90A1AA;
+    --main-accent: #00E53D; 
+    --light-grey-accent: #90A1AA;
     --error: #FF2A34;
 	--black: #000000;
     --white: white;

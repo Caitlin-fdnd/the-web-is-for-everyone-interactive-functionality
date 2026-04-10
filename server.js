@@ -95,8 +95,6 @@ app.get('/snapp/:uuid', async function (request, response) {
 app.post('/snapp/:uuid/action', async (req, res) => {
   const snapUuid = req.params.uuid;
   const actionType = req.body.action;
-
-  try {
     await fetch('https://fdnd-agency.directus.app/items/snappthis_action', {
       method: 'POST',
       body: JSON.stringify({
@@ -105,12 +103,7 @@ app.post('/snapp/:uuid/action', async (req, res) => {
         user: null
       })
     });
-
     res.redirect(`/snapp/${snapUuid}`);
-  } catch (err) {
-    console.error(err);
-    res.status(500).send('Server error');
-  }
 });
 
 // GET route voor groepen
